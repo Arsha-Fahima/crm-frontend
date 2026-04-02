@@ -33,8 +33,6 @@ import Hamburger from "hamburger-react";
 import OurProspects from "./prospects/page";
 import ChatPage from "@/components/chatbot/chat_page";
 
-
-
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
@@ -74,7 +72,7 @@ export default function Layout({ children }) {
     setExpandedItems((prev) =>
       prev.includes(name)
         ? prev.filter((item) => item !== name)
-        : [...prev, name]
+        : [...prev, name],
     );
   };
 
@@ -108,7 +106,7 @@ export default function Layout({ children }) {
         className={cn(
           "fixed inset-y-0 left-0 z-50 transition-all duration-300 ease-in-out",
           sidebarOpen ? "w-64" : "w-16",
-          "hidden sm:block"
+          "hidden sm:block",
         )}
       >
         <div
@@ -153,7 +151,7 @@ export default function Layout({ children }) {
                     className={cn(
                       "flex items-center cursor-pointer rounded-lg p-2 gap-1 text-sm font-medium transition-all",
                       isActive ? "bg-primary" : "",
-                      !sidebarOpen && "justify-center"
+                      !sidebarOpen && "justify-center",
                     )}
                     onClick={() => handleItemClick(item)}
                   >
@@ -171,7 +169,7 @@ export default function Layout({ children }) {
                       <div
                         className={cn(
                           "h-6 w-6 flex-shrink-0",
-                          isActive ? "text-white" : "text-slate-500"
+                          isActive ? "text-white" : "text-slate-500",
                         )}
                       >
                         {item.icon}
@@ -180,7 +178,7 @@ export default function Layout({ children }) {
                         <h5
                           className={cn(
                             "ml-2 truncate max-sm:hidden",
-                            isActive ? "text-white" : ""
+                            isActive ? "text-white" : "",
                           )}
                         >
                           {item.name}
@@ -204,7 +202,7 @@ export default function Layout({ children }) {
                         const hasNestedSubpages =
                           subpage.subpages && subpage.subpages.length > 0;
                         const isNestedExpanded = expandedItems.includes(
-                          subpage.name
+                          subpage.name,
                         );
 
                         return (
@@ -214,7 +212,7 @@ export default function Layout({ children }) {
                                 "flex items-center cursor-pointer rounded-md px-1 py-2 text-sm transition-all",
                                 location === subpage.href
                                   ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                                  : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30"
+                                  : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30",
                               )}
                               onClick={() => {
                                 if (hasNestedSubpages) {
@@ -261,7 +259,7 @@ export default function Layout({ children }) {
                                       "block rounded-md px-1 py-2 text-sm transition-all",
                                       location === nestedPage.href
                                         ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                                        : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30"
+                                        : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30",
                                     )}
                                   >
                                     <span className="flex items-center gap-2">
@@ -293,7 +291,7 @@ export default function Layout({ children }) {
       <div
         className={cn(
           "fixed inset-y-0 left-0 z-50 w-64 transition-transform duration-300 ease-in-out sm:hidden",
-          mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          mobileSidebarOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
         <div className="flex h-full flex-col backdrop-blur-xl bg-white">
@@ -330,7 +328,7 @@ export default function Layout({ children }) {
                       "flex items-center cursor-pointer rounded-lg px-2 py-2 text-sm font-medium transition-all",
                       isActive
                         ? "bg-gradient-to-r from-teal-500 to-sky-500 text-white "
-                        : "text-slate-700 dark:text-slate-300 hover:bg-teal/50 dark:hover:bg-sky-800/50"
+                        : "text-slate-700 dark:text-slate-300 hover:bg-teal/50 dark:hover:bg-sky-800/50",
                     )}
                     onClick={() => handleItemClick(item)}
                   >
@@ -346,7 +344,7 @@ export default function Layout({ children }) {
                       <div
                         className={cn(
                           "h-5 w-5 flex-shrink-0",
-                          isActive ? "text-white" : "text-slate-500"
+                          isActive ? "text-white" : "text-slate-500",
                         )}
                       >
                         {item.icon}
@@ -370,7 +368,7 @@ export default function Layout({ children }) {
                         const hasNestedSubpages =
                           subpage.subpages && subpage.subpages.length > 0;
                         const isNestedExpanded = expandedItems.includes(
-                          subpage.name
+                          subpage.name,
                         );
 
                         return (
@@ -380,7 +378,7 @@ export default function Layout({ children }) {
                                 "flex items-center cursor-pointer rounded-md px-1 py-2 text-sm transition-all",
                                 location === subpage.href
                                   ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                                  : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30"
+                                  : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30",
                               )}
                               onClick={() => {
                                 if (hasNestedSubpages) {
@@ -426,7 +424,7 @@ export default function Layout({ children }) {
                                       "block rounded-md px-1 py-2 text-sm transition-all",
                                       location === nestedPage.href
                                         ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                                        : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30"
+                                        : "text-slate-600 dark:text-slate-400 hover:bg-white/30 dark:hover:bg-slate-800/30",
                                     )}
                                   >
                                     <span className="flex items-center gap-2">
@@ -453,7 +451,7 @@ export default function Layout({ children }) {
         className={cn(
           "transition-all duration-300 ease-in-out min-h-screen",
           sidebarOpen ? "ml-64" : "ml-16",
-          "max-sm:ml-0"
+          "max-sm:ml-0",
         )}
       >
         <div className="sticky top-0 z-40 backdrop-blur-xl">
@@ -568,8 +566,6 @@ export default function Layout({ children }) {
         </main>
       </div>
 
-      
-
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           size="lg"
@@ -578,11 +574,8 @@ export default function Layout({ children }) {
         >
           <Bot className="h-8 w-8" />
         </Button>
-      </div> 
+      </div>
       {botOpen && <ChatPage onClose={() => setBotOpen(false)} />}
-   
-
-
     </div>
   );
 }
